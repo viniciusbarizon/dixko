@@ -2,12 +2,11 @@
 
 declare(strict_types=1);
 
+use App\Http\Controllers\Index;
 use Illuminate\Support\Facades\Route;
 use Laravel\WorkOS\Http\Middleware\ValidateSessionWithWorkOS;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', Index::class);
 
 Route::middleware([
     'auth',
